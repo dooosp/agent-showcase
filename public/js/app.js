@@ -7,15 +7,25 @@ import { initCatalog, setSearch, showDetail, hideDetail } from './catalog.js';
 import { initArchitecture } from './architecture.js';
 
 // ── Init ──
-document.addEventListener('DOMContentLoaded', () => {
-  initCatalog(DATA);
-  initArchitecture(DATA);
-  initSearch();
-  initDetailEvents();
-  initCounterAnimation();
-  initFooter();
-  handleRoute();
-});
+function init() {
+  try {
+    initCatalog(DATA);
+    initArchitecture(DATA);
+    initSearch();
+    initDetailEvents();
+    initCounterAnimation();
+    initFooter();
+    handleRoute();
+  } catch (e) {
+    console.error('Init error:', e);
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
 
 // ── Search ──
 function initSearch() {
