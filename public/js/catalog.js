@@ -185,7 +185,7 @@ export function showDetail(id) {
   }
 
   content.innerHTML = html;
-  overlay.hidden = false;
+  overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 
   // Update URL hash
@@ -201,7 +201,7 @@ export function showDetail(id) {
 }
 
 export function hideDetail() {
-  document.getElementById('detail-overlay').hidden = true;
+  document.getElementById('detail-overlay').classList.remove('open');
   document.body.style.overflow = '';
   history.replaceState(null, '', window.location.pathname);
 }

@@ -8,27 +8,13 @@ import { initArchitecture } from './architecture.js';
 
 // ── Init ──
 function init() {
-  const steps = [
-    ['initCatalog', () => initCatalog(DATA)],
-    ['initArchitecture', () => initArchitecture(DATA)],
-    ['initSearch', initSearch],
-    ['initDetailEvents', initDetailEvents],
-    ['initCounterAnimation', initCounterAnimation],
-    ['initFooter', initFooter],
-    ['handleRoute', handleRoute],
-  ];
-  for (const [name, fn] of steps) {
-    try {
-      fn();
-    } catch (e) {
-      const msg = `[${name}] ${e.message}`;
-      console.error(msg, e);
-      const el = document.createElement('pre');
-      el.style.cssText = 'color:red;background:#1a1a2e;padding:1rem;margin:1rem;font-size:14px;border:2px solid red;border-radius:8px;';
-      el.textContent = msg + '\n' + e.stack;
-      document.body.prepend(el);
-    }
-  }
+  initCatalog(DATA);
+  initArchitecture(DATA);
+  initSearch();
+  initDetailEvents();
+  initCounterAnimation();
+  initFooter();
+  handleRoute();
 }
 
 if (document.readyState === 'loading') {

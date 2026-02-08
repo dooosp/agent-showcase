@@ -190,10 +190,13 @@
   inset: 0;
   background: var(--bg-overlay);
   z-index: 100;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 2rem;
+}
+.detail-overlay.open {
+  display: flex;
 }
 .detail-panel {
   background: var(--bg-card);
