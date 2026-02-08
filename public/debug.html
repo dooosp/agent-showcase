@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head><title>Debug</title></head>
+<body>
+<pre id="log"></pre>
+<script type="module">
+const log = (msg) => {
+  document.getElementById('log').textContent += msg + '\n';
+  console.log(msg);
+};
+
+try {
+  log('1. Loading data.js...');
+  const { DATA } = await import('./js/data.js');
+  log('   OK: ' + DATA.agents.length + ' agents');
+
+  log('2. Loading catalog.js...');
+  const catalog = await import('./js/catalog.js');
+  log('   OK: exports = ' + Object.keys(catalog).join(', '));
+
+  log('3. Loading architecture.js...');
+  const arch = await import('./js/architecture.js');
+  log('   OK: exports = ' + Object.keys(arch).join(', '));
+
+  log('4. Testing initCatalog...');
+  // Check DOM elements exist
+  const grid = document.getElementById('agent-grid');
+  log('   agent-grid exists: ' + (grid !== null));
+  const tabs = document.getElementById('category-tabs');
+  log('   category-tabs exists: ' + (tabs !== null));
+
+  log('5. RESULT: All modules load correctly.');
+  log('   If catalog is empty on main page, check browser console for runtime errors.');
+} catch(e) {
+  log('ERROR: ' + e.message);
+  log(e.stack);
+}
+</script>
+</body>
+</html>
