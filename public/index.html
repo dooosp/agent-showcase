@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Ecosystem — 49 AI Agents by Taeho Jang</title>
+  <meta name="description" content="Interactive showcase of 49 AI agents across 9 categories: production systems, infrastructure, content generation, development tools, and more.">
+  <meta property="og:title" content="Agent Ecosystem — 49 AI Agents">
+  <meta property="og:description" content="Interactive showcase of 49 AI agents across 9 categories built by Taeho Jang">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dooosp.github.io/agent-showcase">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ── Hero ── -->
+  <header id="hero">
+    <div class="hero-content">
+      <h1 class="hero-title"><span class="prompt">&gt;</span> Agent Ecosystem<span class="cursor">_</span></h1>
+      <p class="hero-subtitle">49 AI agents working together — automated trading, lead generation, design pipelines, and more.</p>
+      <div class="stats" id="stats">
+        <div class="stat" data-target="49"><span class="stat-num">0</span><span class="stat-label">Agents</span></div>
+        <div class="stat" data-target="9"><span class="stat-num">0</span><span class="stat-label">Categories</span></div>
+        <div class="stat" data-target="32"><span class="stat-num">0</span><span class="stat-label">Subagents</span></div>
+        <div class="stat" data-target="20"><span class="stat-num">0</span><span class="stat-label">Projects</span></div>
+        <div class="stat" data-target="5"><span class="stat-num">0</span><span class="stat-label">Deploy Targets</span></div>
+      </div>
+      <div class="hero-cta">
+        <a href="#catalog" class="btn btn-primary">Explore Catalog</a>
+        <a href="#architecture" class="btn btn-secondary">View Architecture</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Catalog ── -->
+  <section id="catalog">
+    <div class="section-header">
+      <h2>Agent Catalog</h2>
+      <div class="search-bar">
+        <input type="text" id="search" placeholder="Search agents..." autocomplete="off">
+      </div>
+    </div>
+
+    <div class="filters">
+      <div class="category-tabs" id="category-tabs">
+        <button class="tab active" data-category="all">All</button>
+      </div>
+      <div class="deploy-filters" id="deploy-filters"></div>
+    </div>
+
+    <div class="agent-grid" id="agent-grid"></div>
+    <p class="no-results" id="no-results" hidden>No agents match your search.</p>
+  </section>
+
+  <!-- ── Detail Panel ── -->
+  <div class="detail-overlay" id="detail-overlay" hidden>
+    <div class="detail-panel" id="detail-panel">
+      <button class="detail-close" id="detail-close" aria-label="Close">&times;</button>
+      <div id="detail-content"></div>
+    </div>
+  </div>
+
+  <!-- ── Architecture ── -->
+  <section id="architecture">
+    <div class="section-header">
+      <h2>Architecture</h2>
+      <p class="section-desc">How agents connect and communicate. Hover to highlight connections, click to view details.</p>
+    </div>
+    <div class="arch-container" id="arch-container"></div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer id="footer">
+    <p>Built by <strong>Taeho Jang</strong> &middot; <a href="https://github.com/dooosp" target="_blank" rel="noopener">GitHub</a></p>
+    <p class="footer-meta" id="footer-meta"></p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

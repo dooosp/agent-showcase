@@ -1,0 +1,12 @@
+{
+  "name": "agent-showcase",
+  "version": "1.0.0",
+  "description": "Interactive showcase of 47 AI agents ecosystem",
+  "type": "module",
+  "scripts": {
+    "build-data": "node scripts/build-data.js",
+    "serve": "npx serve public"
+  },
+  "author": "Taeho Jang",
+  "license": "MIT"
+}
