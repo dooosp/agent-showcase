@@ -59,9 +59,27 @@ function parseSubagents() {
   return subs;
 }
 
-// ── Source 3: Portfolio catalog.yml (simple parse) ──
+// ── Source 3: Portfolio catalog.yml (simple parse, fallback to existing agents.json) ──
 function parsePortfolio() {
-  const src = readFileSync(join(HOME, 'portfolio/catalog.yml'), 'utf8');
+  const catalogPath = join(HOME, 'portfolio/catalog.yml');
+  let src;
+  try {
+    src = readFileSync(catalogPath, 'utf8');
+  } catch {
+    // Fallback: extract portfolio data from existing agents.json
+    try {
+      const existing = JSON.parse(readFileSync(join(ROOT, 'public/data/agents.json'), 'utf8'));
+      const projects = {};
+      for (const a of existing.agents) {
+        if (a.project) projects[a.id] = a.project;
+      }
+      console.log(`  catalog.yml not found, reusing ${Object.keys(projects).length} projects from existing agents.json`);
+      return projects;
+    } catch {
+      console.log('  catalog.yml not found, no fallback available');
+      return {};
+    }
+  }
   const projects = {};
   const blocks = src.split(/\n  - id: /).slice(1);
   for (const block of blocks) {
