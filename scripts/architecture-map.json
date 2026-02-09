@@ -15,7 +15,8 @@
     { "from": "debug-detective-agent", "to": ["invest-intelligence-loop", "pm-agent-system", "telegram-bot-agent"] },
     { "from": "agent-eval-benchmark", "to": ["invest-intelligence-loop", "pm-agent-system"] },
     { "from": "auto-trader", "to": ["invest-intelligence-loop"] },
-    { "from": "invest-quant", "to": ["invest-intelligence-loop"] }
+    { "from": "invest-quant", "to": ["invest-intelligence-loop"] },
+    { "from": "freecad-automation", "to": ["robot-modeler"] }
   ],
   "groups": {
     "Production": { "color": "#e74c3c", "x": 400, "y": 60 },

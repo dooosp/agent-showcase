@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generatedAt": "2026-02-09T08:26:38.413Z",
+    "generatedAt": "2026-02-09T08:28:20.405Z",
     "counts": {
-      "agents": 49,
+      "agents": 50,
       "subagents": 32,
       "projects": 19,
       "categories": 9,
@@ -32,7 +32,7 @@
       "id": "development",
       "name": "Development",
       "icon": "💻",
-      "count": 8
+      "count": 9
     },
     {
       "id": "business",
@@ -1109,7 +1109,40 @@
         ],
         "inMaster": false
       },
-      "connections": []
+      "connections": [
+        "freecad-automation"
+      ]
+    },
+    {
+      "id": "freecad-automation",
+      "name": "FreeCAD Automation",
+      "category": "Development",
+      "categoryIcon": "💻",
+      "description": "FreeCAD 3D automation framework: WSL-to-Windows bridge spawning python.exe for parametric modeling, boolean ops, and STEP/STL export",
+      "deploy": "Local",
+      "usage": [
+        "cd ~/freecad-automation",
+        "node bin/fcad.js create configs/examples/bracket.toml  # 모델 생성",
+        "node bin/fcad.js inspect output/bracket_v1.step  # 메타데이터",
+        "5 도형 (Box/Cylinder/Sphere/Cone/Torus) + Boolean (fuse/cut/common)",
+        "Fillet/Chamfer (best-effort), STEP/STL/OBJ/BREP 내보내기",
+        "TOML/JSON 설정 → FreeCAD python.exe 스폰 → stdin/stdout JSON I/O"
+      ],
+      "keywords": [
+        "FreeCAD",
+        "3D",
+        "CAD",
+        "STEP",
+        "STL",
+        "parametric",
+        "automation"
+      ],
+      "type": "standalone",
+      "subagent": null,
+      "project": null,
+      "connections": [
+        "robot-modeler"
+      ]
     },
     {
       "id": "crm-agent",

@@ -47,5 +47,6 @@
   "topdown-learner": "Socratic verification learning with 4 modes: topic study, code analysis, agent review, curriculum",
   "shadow-english": "English shadowing coach with Korean speaker phoneme priorities, IPA notation, and session tracking",
   "agent-orchestrator": "YAML workflow engine with 10 adapters, checkpoint/resume, and natural language composer",
-  "shared-libs": "Shared libraries: llm-client (Gemini wrapper with retry) and news-fetcher (multi-source with dedup)"
+  "shared-libs": "Shared libraries: llm-client (Gemini wrapper with retry) and news-fetcher (multi-source with dedup)",
+  "freecad-automation": "FreeCAD 3D automation framework: WSL-to-Windows bridge spawning python.exe for parametric modeling, boolean ops, and STEP/STL export"
 }
